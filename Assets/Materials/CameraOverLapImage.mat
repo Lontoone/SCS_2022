@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DisplaceTexture:
-        m_Texture: {fileID: 2800000, guid: 6c509e4ae024b5e4faeefb92dab5c812, type: 3}
+        m_Texture: {fileID: 2800000, guid: 93cf13737abe385428f557b30c99c103, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -32,9 +32,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OverLapImage:
-        m_Texture: {fileID: 2800000, guid: 9a81f1a59f171804e84fce76584bdcb7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 696cf8fe68d7f0548a0a93d5a93e41c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _RangeSize: 0.57
+    - _SoftClipRange: 0.1
     m_Colors: []
   m_BuildTextureStacks: []

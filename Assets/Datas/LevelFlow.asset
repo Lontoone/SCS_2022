@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ba7bbf0a2b74f48a6cea1eebb689a9, type: 3}
   m_Name: LevelFlow
   m_EditorClassIdentifier: 
-  mainSceneName: MainScene
+  mainSceneName: 
   startNodeDatas:
   - guid: 2a57c20b-bf95-4d7b-b569-65d9dc5dfd7b
     position: {x: 189, y: 358}
@@ -24,6 +24,16 @@ MonoBehaviour:
       nodeGuid: 2a57c20b-bf95-4d7b-b569-65d9dc5dfd7b
       position: {x: 0, y: 0}
     startName: StartPoint
+  - guid: a197290b-c8ba-47c5-9ba5-71fcc6ac2b6e
+    position: {x: 1139, y: -172}
+    portSet:
+      setGuid: d1a89921-9cbb-467e-9633-6e2a18913fed
+      localInGuid: 54eaad3a-2c10-474f-a592-3b71bbf1970a
+      localOutGuid: b112e10d-d9b5-4695-b848-b4f61c11b8ac
+      pointObjectName: Start
+      nodeGuid: a197290b-c8ba-47c5-9ba5-71fcc6ac2b6e
+      position: {x: 0, y: 0}
+    startName: Loop
   levelNodeDatas:
   - guid: 0056ed18-5335-4365-9d15-11bff629426d
     position: {x: 309, y: 99}
@@ -82,6 +92,19 @@ MonoBehaviour:
     asyncType: 1
     scenePath: Assets/Scenes/Level2.unity
     sceneAssestGuid: bbd82b2d071a50540b56da96d74cd2f0
+  - guid: e8eae30c-25aa-40bd-932f-b10a21e87d21
+    position: {x: 1537, y: 111}
+    portSets:
+    - setGuid: 23bd9617-fbfd-4324-b999-bd52fc6985f0
+      localInGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
+      localOutGuid: 4996e014-9b2c-4aa9-ad5f-86e21204a3cb
+      pointObjectName: GameObject
+      nodeGuid: e8eae30c-25aa-40bd-932f-b10a21e87d21
+      position: {x: 0, y: 0}
+    loadType: 1
+    asyncType: 0
+    scenePath: Assets/Scenes/LoopStart.unity
+    sceneAssestGuid: 89cb5654e5fec584ebf42a77e4ac05b8
   linkDatas:
   - inPortGuid: 278d33eb-6f4a-4aed-b5cf-94b373450eb2
     outPortGuid: 6acef48b-ceef-4895-a340-a550bbf83feb
@@ -93,3 +116,7 @@ MonoBehaviour:
     outPortGuid: 6d02c311-cff3-4ff4-be94-26b296cacc13
   - inPortGuid: c3412277-7b2a-4657-888b-62e1ec3a77bc
     outPortGuid: 6295ddad-3354-47a1-adb8-2d5ce0072b96
+  - inPortGuid: 694c8625-f780-4716-877d-83817ec5eafc
+    outPortGuid: b112e10d-d9b5-4695-b848-b4f61c11b8ac
+  - inPortGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
+    outPortGuid: 3f23f484-41ef-4b01-b64e-365ac4533a9c

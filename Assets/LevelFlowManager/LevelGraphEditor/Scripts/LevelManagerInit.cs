@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class LevelManagerInit : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] dontDestoryObjs;
+    public LevelMapSO levelData;
     void Start()
     {
-        
+        for (int i= 0; i<dontDestoryObjs.Length; i++) {
+            DontDestroyOnLoad(dontDestoryObjs[i]);
+        }
+        DontDestroyOnLoad(gameObject);
+        LevelFlowManager.flowData = levelData;
+        LevelFlowManager.LoadFromStart("StartPoint");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    public void ClearAll() { 
+        //TODO: ....
     }
+
 }
