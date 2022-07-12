@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,12 +31,20 @@ public class PlayerController : MonoBehaviour
     public GameObject dashEffect;
 
     public float Health;
+
+    public GameObject DeathUI;
+
+
+    [Header("攝影機跟隨")]
+    public float camRayLenght = 100f;
+    private int floorMask;
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody>();
         hitable = gameObject.GetComponent<HitableObject>();
         hitable.gotHit_event += GetHurt;
+        hitable.Die_event += Die;
         canDash = true;
     }
     private void OnDestroy()
@@ -92,6 +101,8 @@ public class PlayerController : MonoBehaviour
                 HitableObject.Hit_event_c(_attacked[i].gameObject , 30);
             }
         }
+
+        Turning();
     }
 
     private void FixedUpdate()
@@ -168,5 +179,32 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(attackBound.center +transform.position , attackBound.size);
+    }
+    
+    void Die()
+    {
+        DeathUI.SetActive(true);
+        Invoke("Loading", 2f);
+    }
+
+    void Loading()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    void Turning()
+    {
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit floorHit;
+
+        if (Physics.Raycast(camRay, out floorHit, camRayLenght, floorMask))
+        {
+            Vector3 playerToMouse = floorHit.point - transform.position;
+            playerToMouse.y = 0;
+            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+
+            RB.MoveRotation(newRotation);
+        }
     }
 }
