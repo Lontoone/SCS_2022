@@ -4593,6 +4593,7 @@ GameObject:
   - component: {fileID: 4000013488956786}
   - component: {fileID: 198000011254678926}
   - component: {fileID: 199000010223498802}
+  - component: {fileID: 4335125162997370685}
   m_Layer: 0
   m_Name: BloodBurstEffect
   m_TagString: Untagged
@@ -4623,7 +4624,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012909287652}
   serializedVersion: 7
-  lengthInSec: 0.25
+  lengthInSec: 1
   simulationSpeed: 2
   stopAction: 0
   cullingMode: 3
@@ -4831,7 +4832,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8008,7 +8009,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -9214,3 +9215,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4335125162997370685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012909287652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee1976dfa4500142aa153c6b726651b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

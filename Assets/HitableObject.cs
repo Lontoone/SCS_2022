@@ -5,6 +5,7 @@ using System;
 
 public class HitableObject : MonoBehaviour
 {
+    public static event Action<Vector3 , float> HitEffect_event;
     private static event Action<GameObject, float> Hit_event;
     public event Action Die_event;
     public event Action gotHit_event;
@@ -53,7 +54,7 @@ public class HitableObject : MonoBehaviour
             {
                 HP -= damage;
                 //特效:
-                Hit_effect();
+                HitEffect_event?.Invoke(target.transform.position , damage);
             }
             //判斷死亡
             if (HP <= 0)

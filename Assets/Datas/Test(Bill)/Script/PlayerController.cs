@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontal, 0, Vertical).normalized;
 
-        RB.velocity = new Vector3(-Vertical * moveSpeed, 0, horizontal * moveSpeed);
+        RB.velocity = new Vector3(horizontal * moveSpeed, 0, Vertical * moveSpeed);
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && Vertical > 0 && canDash)
         {
