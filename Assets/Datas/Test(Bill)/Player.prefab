@@ -32,7 +32,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.6892403, z: 0, w: 0.7245329}
   m_LocalPosition: {x: 16.23, y: 0.48000002, z: 0.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 421174368791924039}
   m_Father: {fileID: 0}
@@ -57,7 +56,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -129,6 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e06d5fbb39a74c5abe3449dfe9e5b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 513
+  attackBound:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   moveSpeed: 3
   horizontal: 0
   Vertical: 0
@@ -138,6 +142,8 @@ MonoBehaviour:
   canDash: 0
   dashEffect: {fileID: 4935845890481928826, guid: 116fcab08bb5944a281575b56b5b3166, type: 3}
   Health: 100
+  DeathUI: {fileID: 0}
+  camRayLenght: 100
 --- !u!65 &421174368108099394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,7 +186,6 @@ Transform:
   m_LocalRotation: {x: 0.21369055, y: -0, z: 0.00000002235174, w: 0.9769014}
   m_LocalPosition: {x: 0.57, y: 4.54, z: -5.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421174368108099393}
   m_RootOrder: 0
@@ -258,7 +263,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2

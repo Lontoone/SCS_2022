@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public LayerMask attackLayer;
     public Bounds attackBound;
     private HitableObject hitable;
     public static event Action<Vector3,int> OnHurt;
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0)) {
-            Collider[] _attacked = Physics.OverlapBox(attackBound.center+transform.position, attackBound.extents);
+            Collider[] _attacked = Physics.OverlapBox(attackBound.center+transform.position, attackBound.extents,Quaternion.identity,attackLayer);
             for (int i =0; i< _attacked.Length; i++) {
                 HitableObject.Hit_event_c(_attacked[i].gameObject , 30);
             }
