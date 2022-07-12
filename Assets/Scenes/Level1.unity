@@ -823,8 +823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectMaterial: {fileID: 2100000, guid: 09ec30a389b1e9d4d925bc5b04f3c5ef, type: 2}
-  displacement_magnitude: 0.025
-  mask_magnitude: 0.01
+  maskRangeSize: 1
+  overLapImg: {fileID: 0}
   renderProviderCamera: {fileID: 626785907}
   mainCamera: {fileID: 1433599455}
   facter: 4
