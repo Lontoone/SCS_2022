@@ -551,6 +551,7 @@ MonoBehaviour:
   Player: {fileID: 1135024188}
   followSpeed: 20
   offset: {x: 0, y: 7, z: -10}
+  smoothTime: 0.05
 --- !u!1 &1890058796
 GameObject:
   m_ObjectHideFlags: 0
