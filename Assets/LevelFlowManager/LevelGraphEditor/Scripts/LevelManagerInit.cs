@@ -6,6 +6,7 @@ public class LevelManagerInit : MonoBehaviour
 {
     public GameObject[] dontDestoryObjs;
     public LevelMapSO levelData;
+
     void Start()
     {
         for (int i= 0; i<dontDestoryObjs.Length; i++) {
