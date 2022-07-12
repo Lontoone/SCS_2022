@@ -39,7 +39,8 @@ public class LevelManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         currentLvCount++;
-        float _newMaskMag = Mathf.Clamp01(blackScreenFX.maskRangeSize - 0.1f*currentLvCount);
+        //float _newMaskMag = Mathf.Clamp01(blackScreenFX.maskRangeSize - 0.1f*currentLvCount);
+        float _newMaskMag = Mathf.Clamp01(0.9f - 0.05f * currentLvCount);
         blackScreenFX.SetMaskMag(_newMaskMag);
     }
 

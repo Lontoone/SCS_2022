@@ -105,9 +105,24 @@ MonoBehaviour:
     asyncType: 0
     scenePath: Assets/Scenes/LoopStart.unity
     sceneAssestGuid: 89cb5654e5fec584ebf42a77e4ac05b8
+  - guid: 41e0e4c2-b76e-4cbe-86f4-aed0795ca994
+    position: {x: -215, y: 280}
+    portSets:
+    - setGuid: ec455bab-8265-4ea0-8511-b1b6932e713f
+      localInGuid: f188c1a5-3eeb-4144-9518-2dbc805b8b2f
+      localOutGuid: 101deda5-cf0d-423f-a1a5-a842f01ca2b0
+      pointObjectName: GameObject
+      nodeGuid: 41e0e4c2-b76e-4cbe-86f4-aed0795ca994
+      position: {x: 0, y: 0}
+    loadType: 1
+    asyncType: 0
+    scenePath: Assets/Scenes/TrueEnd.unity
+    sceneAssestGuid: a95a0ef7e0b1e094e89748847f23c2f7
   linkDatas:
   - inPortGuid: 278d33eb-6f4a-4aed-b5cf-94b373450eb2
     outPortGuid: 6acef48b-ceef-4895-a340-a550bbf83feb
+  - inPortGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
+    outPortGuid: 3f23f484-41ef-4b01-b64e-365ac4533a9c
   - inPortGuid: 4513f114-4474-4f3e-b0cd-aa0baf1e9838
     outPortGuid: 4fc57768-60c4-400e-a57b-7fe54a42877e
   - inPortGuid: 89b2a0d4-1825-49b0-9d0d-1ff06436ace8
@@ -118,5 +133,5 @@ MonoBehaviour:
     outPortGuid: 6295ddad-3354-47a1-adb8-2d5ce0072b96
   - inPortGuid: 694c8625-f780-4716-877d-83817ec5eafc
     outPortGuid: b112e10d-d9b5-4695-b848-b4f61c11b8ac
-  - inPortGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
-    outPortGuid: 3f23f484-41ef-4b01-b64e-365ac4533a9c
+  - inPortGuid: f188c1a5-3eeb-4144-9518-2dbc805b8b2f
+    outPortGuid: c6a48a56-3c3b-43ca-bae3-ac1d2d799578

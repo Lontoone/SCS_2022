@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoopStart.unity
     guid: 89cb5654e5fec584ebf42a77e4ac05b8
+  - enabled: 1
+    path: Assets/Scenes/TrueEnd.unity
+    guid: a95a0ef7e0b1e094e89748847f23c2f7
   m_configObjects: {}
