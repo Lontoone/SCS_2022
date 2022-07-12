@@ -60,8 +60,12 @@ Shader "Unlit/CameraOverLapImage"
             }
 
             fixed4 frag(v2f i) : SV_Target
-            {
-                float4 color = tex2D(_MainTex, i.uv );
+            {                
+                //位移
+                float2 dis = tex2D(_DisplaceTexture, i.uv + _Time.x).xy;
+                dis = ((dis * 2) - 1) * _Magnitude;  //(*2-1) -> 把uv範圍[0,1] 改成 [-1,1]
+
+                float4 color = tex2D(_MainTex, i.uv+dis );
                 float distance = length( i.uv - float2(0.5,0.5));
                 float _isInrange = distance < (_RangeSize + _SoftClipRange) ;
                 float _t = clamp( ( distance - _RangeSize )/_SoftClipRange,0,1);
@@ -70,6 +74,7 @@ Shader "Unlit/CameraOverLapImage"
 
                 float4 overlapImg = tex2D(_OverLapImage, i.uv );
                 float4 result = lerp(maskedMainTex, overlapImg, Luminance(overlapImg));
+
 
                 return result;
                 
