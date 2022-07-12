@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DamageTest : MonoBehaviour
+public class HitableObject : MonoBehaviour
 {
     private static event Action<GameObject, float> Hit_event;
     public event Action Die_event;

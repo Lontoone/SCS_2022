@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
+    private HitableObject hitable;
+    public Bounds attackRange;
     [Header("移動速度")]
     int MoveSpeed = 20;
 
@@ -27,11 +29,18 @@ public class EnemyControl : MonoBehaviour
     {
         PlayerObj = GameObject.FindGameObjectsWithTag("Player");
         PlayerObj[0].transform.position = PlayerObj[0].transform.position;
+        hitable = gameObject.GetComponent<HitableObject>();
+        hitable.gotHit_event += GetHurt;
+        hitable.Die_event += Die;
         // m_Animator = GetComponent<Animator>();   
     }
+    private void OnDestroy()
+    {
+        hitable.gotHit_event -= GetHurt;
+        hitable.Die_event -= Die;
+    }
 
-    
-    
+
 
     void Update()
     {
@@ -68,10 +77,12 @@ public class EnemyControl : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        HitableObject.Hit_event_c(other.gameObject , 10);
+        /*
         if (other.GetComponent<Collider>().tag == "Player")
         {
             GetHurt();
-        }
+        }*/
     }
 
     void GetHurt()
@@ -84,5 +95,10 @@ public class EnemyControl : MonoBehaviour
             Instantiate(Medic, transform.position, transform.rotation);
             //Blood = Blood - 50;
         }
+    }
+
+    void Die() {
+        //desyoty...
+        Destroy(gameObject);
     }
 }

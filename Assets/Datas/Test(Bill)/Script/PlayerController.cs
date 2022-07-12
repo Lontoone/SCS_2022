@@ -6,6 +6,8 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public Bounds attackBound;
+    private HitableObject hitable;
     public static event Action<Vector3,int> OnHurt;
     [Header("移動")]
     public float moveSpeed = 3f;
@@ -32,7 +34,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody>();
+        hitable = gameObject.GetComponent<HitableObject>();
+        hitable.gotHit_event += GetHurt;
         canDash = true;
+    }
+    private void OnDestroy()
+    {
+        hitable.gotHit_event -= GetHurt;
     }
 
     // Update is called once per frame
@@ -76,6 +84,13 @@ public class PlayerController : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.C))
         {
             moveSpeed = 3;
+        }
+
+        if (Input.GetMouseButtonDown(0)) {
+            Collider[] _attacked = Physics.OverlapBox(attackBound.center+transform.position, attackBound.extents);
+            for (int i =0; i< _attacked.Length; i++) {
+                HitableObject.Hit_event_c(_attacked[i].gameObject , 30);
+            }
         }
     }
 
@@ -147,5 +162,11 @@ public class PlayerController : MonoBehaviour
     {
         Health = Health + 15;
         //Debug.Log("Health");
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(attackBound.center +transform.position , attackBound.size);
     }
 }
