@@ -29,11 +29,11 @@ public class GlobalEffecter : MonoBehaviour
 
 
     public void DamageEffect(Vector3 _pos , float _damge) {
-        string key = "Hurt";
+        string key = "Attack";
         GCAutoRecall obj = GCManager.Instantiate<GCAutoRecall>(key);
         EffectObjectSO so = effect_dicts[key];
         obj.transform.position = _pos;
-        obj.SetRecall("Hurt", so.duration);
+        obj.SetRecall(key, so.duration);
 
     }
 

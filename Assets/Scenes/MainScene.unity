@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - {fileID: 11400000, guid: bdfcfa6adeb093341833a2e5e9c584cc, type: 2}
+  - {fileID: 11400000, guid: 76c801be5347f4446a4eeae08329d663, type: 2}
 --- !u!4 &813088502
 Transform:
   m_ObjectHideFlags: 0
