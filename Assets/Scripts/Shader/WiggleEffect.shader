@@ -3,7 +3,7 @@ Shader "Unlit/WiggleEffect"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-         _Tint ("Tint", Color) = (1,1,1,1)
+        _Tint ("Tint", Color) = (1,1,1,1)
 
     }
     SubShader
@@ -17,6 +17,9 @@ Shader "Unlit/WiggleEffect"
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_instancing
+            
+            #pragma target 4.5
+
             
             // make fog work
             #pragma multi_compile_fog

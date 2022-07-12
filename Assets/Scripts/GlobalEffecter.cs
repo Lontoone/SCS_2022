@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GlobalEffecter : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class GlobalEffecter : MonoBehaviour
         }
 
         HitableObject.HitEffect_event += DamageEffect;
+        HitableObject.HitEffect_event += PopUpText;
 
     }
 
     private void OnDestroy()
     {
         HitableObject.HitEffect_event -= DamageEffect;
+        HitableObject.HitEffect_event -= PopUpText;
     }
 
 
@@ -35,6 +38,22 @@ public class GlobalEffecter : MonoBehaviour
         obj.transform.position = _pos;
         obj.SetRecall(key, so.duration);
 
+        ShakeCamera();
+    }
+
+    public void PopUpText(Vector3 _pos , float _damage) {
+        string key = "PopUpText";
+        GCAutoRecall obj = GCManager.Instantiate<GCAutoRecall>(key);
+        EffectObjectSO so = effect_dicts[key];        
+        obj.transform.position = _pos;
+        obj.SetRecall(key, so.duration);
+
+        obj.GetComponent<JumpTextControl>().SetText(_pos,_damage.ToString());
+
+    }
+
+    public void ShakeCamera() {
+        Camera.main.DOShakePosition(0.15f);
     }
 
 

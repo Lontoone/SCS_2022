@@ -41,10 +41,10 @@ public class LevelManager : MonoBehaviour
     {
         currentLvCount++;
         //float _newMaskMag = Mathf.Clamp01(blackScreenFX.maskRangeSize - 0.1f*currentLvCount);
-        float _newMaskMag = Mathf.Clamp01(0.9f - 0.05f * currentLvCount);
+        float _newMaskMag = Mathf.Clamp01(0.9f - 0.1f * currentLvCount);
         blackScreenFX.SetMaskMag(_newMaskMag);
 
-        blackScreenFX.SetDisMag(0.001f * currentLvCount);
+        blackScreenFX.SetDisMag(0.01f * currentLvCount);
         if (currentLvCount >= 8) {
             //blackScreenFX.effectMaterial.SetTexture("_OverLapImage", bigGlassImage);
             blackScreenFX.SetOverLapImage(bigGlassImage);
