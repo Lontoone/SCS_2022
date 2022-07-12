@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public static event Action<Vector3,int> OnHurt;
     [Header("移動")]
     public float moveSpeed = 3f;
 
@@ -135,8 +137,10 @@ public class PlayerController : MonoBehaviour
 
     void GetHurt()
     {
+        int damage = 15;
         Health = Health - 15;
         //Debug.Log("Hurt");
+        OnHurt?.Invoke(transform.position , damage);
     }
 
     void GetHealth()

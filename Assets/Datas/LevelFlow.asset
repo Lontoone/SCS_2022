@@ -92,19 +92,6 @@ MonoBehaviour:
     asyncType: 1
     scenePath: Assets/Scenes/Level2.unity
     sceneAssestGuid: bbd82b2d071a50540b56da96d74cd2f0
-  - guid: e8eae30c-25aa-40bd-932f-b10a21e87d21
-    position: {x: 1537, y: 111}
-    portSets:
-    - setGuid: 23bd9617-fbfd-4324-b999-bd52fc6985f0
-      localInGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
-      localOutGuid: 4996e014-9b2c-4aa9-ad5f-86e21204a3cb
-      pointObjectName: GameObject
-      nodeGuid: e8eae30c-25aa-40bd-932f-b10a21e87d21
-      position: {x: 0, y: 0}
-    loadType: 1
-    asyncType: 0
-    scenePath: Assets/Scenes/LoopStart.unity
-    sceneAssestGuid: 89cb5654e5fec584ebf42a77e4ac05b8
   - guid: 41e0e4c2-b76e-4cbe-86f4-aed0795ca994
     position: {x: -215, y: 280}
     portSets:
@@ -118,7 +105,22 @@ MonoBehaviour:
     asyncType: 0
     scenePath: Assets/Scenes/TrueEnd.unity
     sceneAssestGuid: a95a0ef7e0b1e094e89748847f23c2f7
+  - guid: e8eae30c-25aa-40bd-932f-b10a21e87d21
+    position: {x: 1537, y: 111}
+    portSets:
+    - setGuid: 23bd9617-fbfd-4324-b999-bd52fc6985f0
+      localInGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
+      localOutGuid: 4996e014-9b2c-4aa9-ad5f-86e21204a3cb
+      pointObjectName: GameObject
+      nodeGuid: e8eae30c-25aa-40bd-932f-b10a21e87d21
+      position: {x: 0, y: 0}
+    loadType: 1
+    asyncType: 0
+    scenePath: Assets/Scenes/LoopStart.unity
+    sceneAssestGuid: 89cb5654e5fec584ebf42a77e4ac05b8
   linkDatas:
+  - inPortGuid: f188c1a5-3eeb-4144-9518-2dbc805b8b2f
+    outPortGuid: c6a48a56-3c3b-43ca-bae3-ac1d2d799578
   - inPortGuid: 278d33eb-6f4a-4aed-b5cf-94b373450eb2
     outPortGuid: 6acef48b-ceef-4895-a340-a550bbf83feb
   - inPortGuid: 62a860c8-4201-42a1-8970-5e41b2b9f9a3
@@ -133,5 +135,3 @@ MonoBehaviour:
     outPortGuid: 6295ddad-3354-47a1-adb8-2d5ce0072b96
   - inPortGuid: 694c8625-f780-4716-877d-83817ec5eafc
     outPortGuid: b112e10d-d9b5-4695-b848-b4f61c11b8ac
-  - inPortGuid: f188c1a5-3eeb-4144-9518-2dbc805b8b2f
-    outPortGuid: c6a48a56-3c3b-43ca-bae3-ac1d2d799578
