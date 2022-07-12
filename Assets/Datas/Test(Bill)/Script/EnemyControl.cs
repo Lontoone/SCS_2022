@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyControl : MonoBehaviour
 {
     [Header("移動速度")]
     int MoveSpeed = 20;
@@ -20,22 +20,31 @@ public class Enemy : MonoBehaviour
     public GameObject Medic;
 
     float X;
+
+    public int Blood = 100;
     //public AudioSource As;
     void Start()
     {
         PlayerObj = GameObject.FindGameObjectsWithTag("Player");
         PlayerObj[0].transform.position = PlayerObj[0].transform.position;
-        // m_Animator = GetComponent<Animator>();
+        // m_Animator = GetComponent<Animator>();   
     }
 
+    
+    
 
     void Update()
     {
 
         transform.LookAt(PlayerObj[0].transform);
 
+        SearchandAttack();
 
+        //if(PlayerObj[0].GetComponent<PlayerController>().Health )
+    }
 
+    void SearchandAttack()
+    {
         if (Vector3.Distance(transform.position, PlayerObj[0].transform.position) >= MinDist)
         {
 
@@ -54,9 +63,6 @@ public class Enemy : MonoBehaviour
                 MoveSpeed = 10;
                 // m_Animator.SetBool("isAttack", false);
             }
-
-
-
         }
     }
 
@@ -64,14 +70,19 @@ public class Enemy : MonoBehaviour
     {
         if (other.GetComponent<Collider>().tag == "Player")
         {
-            X = Random.Range(0, 2);
-            Destroy(gameObject);
-            Debug.Log(X);
-            if (X == 1)
-            {
-                Instantiate(Medic, transform.position, transform.rotation);
-            }
-            
+            GetHurt();
+        }
+    }
+
+    void GetHurt()
+    {
+        X = Random.Range(0, 2);
+        //Destroy(gameObject);
+        Debug.Log(X);
+        if (X == 1)
+        {
+            Instantiate(Medic, transform.position, transform.rotation);
+            //Blood = Blood - 50;
         }
     }
 }
