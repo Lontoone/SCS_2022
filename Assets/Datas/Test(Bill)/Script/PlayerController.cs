@@ -33,12 +33,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject DeathUI;
 
-
+    public GameObject RestartUI;
     [Header("攝影機跟隨")]
     public float camRayLenght = 100f;
     private int floorMask;
 
     public GameObject attckObj;
+
+    public Animator Am;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,16 +100,31 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)) {
             attckObj.SetActive(true);
+            Am.SetBool("isAttack", true);
+            Invoke("AttackFalse", 1f);
         }
 
         
-        if (Input.GetMouseButtonUp(0))
-        {
-            attckObj.SetActive(false);
-        }
-        Turning();
-    }
 
+        Turning();
+
+        if(horizontal != 0 || Vertical != 0)
+        {
+            Am.SetBool("isWalk", true);
+        }
+        else if (horizontal == 0 || Vertical == 0)
+        {
+            Am.SetBool("isWalk", false);
+        }
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            RestartUI.SetActive(true);
+        }
+    }
+    void AttackFalse()
+    {
+        Am.SetBool("isAttack", false);
+    }
     private void FixedUpdate()
     {
         if (isDashForward)
@@ -180,8 +197,8 @@ public class PlayerController : MonoBehaviour
     
     void Die()
     {
-        DeathUI.SetActive(true);
         Invoke("Loading", 2f);
+        RestartUI.SetActive(true);
     }
 
     void Loading()
