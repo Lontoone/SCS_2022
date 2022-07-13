@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb6cc88da8672d40b2e478990ac04c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3959033729760399076, guid: c14a9e99357aa428da44b2571bc916a6, type: 3}
+  prefab: {fileID: 5401654031665205279, guid: c79f1d32e1a0d4f4697685c8e2a957d0, type: 3}
   bound:
     m_Center: {x: 0, y: 1.04, z: 0}
     m_Extent: {x: 2, y: 1, z: 2}

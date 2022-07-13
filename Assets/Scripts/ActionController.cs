@@ -144,7 +144,6 @@ public class ActionController : MonoBehaviour
         }
 
 
-        Debug.Log("Add Action" + _newAct.description);
         _newAct.time_out_counter = _newAct.timeOut;
 
         //檢查是否可斷

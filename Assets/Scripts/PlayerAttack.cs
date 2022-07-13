@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public ActionController.mAction attack;
     ActionController actionController;
     public KeyCode attackKeyCode;
+    public ColliderDetector colliderDetector;
 
     public Collider attackRangeCollider;
     Animator animator;
@@ -28,8 +29,13 @@ public class PlayerAttack : MonoBehaviour
     }
     public void Attack()
     {
-
+        Debug.Log("Attack");
         animator.Play("Attack");
+        //Attack_anima_event(10);
+        for (int i=0; i< colliderDetector.collidersInRange.Count; i++) {
+            HitableObject.Hit_event_c(colliderDetector.collidersInRange[i], 10);
+        
+        }
     }
 
     public void Attack_anima_event(float damage_multiplier)//傳入攻擊乘數 (由Animator呼叫)

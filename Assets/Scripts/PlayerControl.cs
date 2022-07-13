@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     PhysicsControlListeners listeners;
     HitableObject hitable;
 
-    public ActionController.mAction idle, walk, run, hurt, assemble;
+    public ActionController.mAction idle, walk, run, hurt;
     ActionController actionController;
 
     public static event Action eAssamble, eEndAssamble;
@@ -51,15 +51,12 @@ public class PlayerControl : MonoBehaviour
         float vz_input = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(vz_input, 0, -hx_input) * speed;
-        Debug.Log("player move " + move.magnitude);
         if (move.magnitude > 10f)
         {
-            Debug.Log(rigid.velocity.magnitude + "run");
             actionController.AddAction(run);
         }
         else if (move.magnitude > 0.1f)
         {
-            Debug.Log(rigid.velocity.magnitude + "walk");
             actionController.AddAction(walk);
         }
         else
@@ -72,6 +69,7 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         //召集史萊姆:
         if (Input.GetKey(KeyCode.R))
         {
@@ -85,7 +83,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.R) && eEndAssamble != null)
         {
             eEndAssamble();
-        }
+        }*/
     }
 
     public void Move()
@@ -93,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         float hx_input = Input.GetAxis("Horizontal");
         float vz_input = Input.GetAxis("Vertical");
 
-        Vector3 move = new Vector3(vz_input, 0, -hx_input) * speed;
+        Vector3 move = new Vector3(hx_input ,  0, vz_input) * speed;
         rigid.velocity = new Vector3(move.x, rigid.velocity.y, move.z);
 
         if (rigid.velocity.magnitude > 0.5f)
