@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     
     private int currentLvCount = 0;
     private BlackScreenEffect _bse;
+    public Texture bigGlassImage;
     public BlackScreenEffect blackScreenFX
     {
         get
@@ -42,6 +43,12 @@ public class LevelManager : MonoBehaviour
         //float _newMaskMag = Mathf.Clamp01(blackScreenFX.maskRangeSize - 0.1f*currentLvCount);
         float _newMaskMag = Mathf.Clamp01(0.9f - 0.05f * currentLvCount);
         blackScreenFX.SetMaskMag(_newMaskMag);
+
+        blackScreenFX.SetDisMag(0.005f * currentLvCount);
+        if (currentLvCount >= 8) {
+            //blackScreenFX.effectMaterial.SetTexture("_OverLapImage", bigGlassImage);
+            blackScreenFX.SetOverLapImage(bigGlassImage);
+        }
     }
 
 }

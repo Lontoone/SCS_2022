@@ -6,16 +6,16 @@ using UnityEngine.Rendering;
 public class BlackScreenEffect : MonoBehaviour
 {
     public Material effectMaterial;
-    /*
     public float displacement_magnitude = 0.025f;
-    public float mask_magnitude = 0.5f;
     public readonly string _magnitude_name = "_Magnitude";
+    /*
+    public float mask_magnitude = 0.5f;
     public readonly string _Maskmagnitude_name = "_MaskTex_mag";*/
 
     public float maskRangeSize = 1;
     public readonly string _RangeSize = "_RangeSize";
 
-    public Texture2D overLapImg;
+    public Texture overLapImg;
     public readonly string _OverLapImage = "_OverLapImage";
     /*  
     ??**************!ONLY WORK FOR SRP!*****************
@@ -41,7 +41,8 @@ public class BlackScreenEffect : MonoBehaviour
         renderProviderCamera.targetTexture = render_Tex;
         effectMaterial.mainTexture = render_Tex;
 
-        //Shader.SetGlobalFloat(_magnitude_name, displacement_magnitude);
+        effectMaterial.SetTexture(_OverLapImage, overLapImg);
+        Shader.SetGlobalFloat(_magnitude_name, displacement_magnitude);
         Shader.SetGlobalFloat(_RangeSize, maskRangeSize);
         RenderPipelineManager.endCameraRendering += EndCameraRendering;
     }
@@ -57,6 +58,16 @@ public class BlackScreenEffect : MonoBehaviour
         maskRangeSize = newMag;
         Shader.SetGlobalFloat(_RangeSize, maskRangeSize);
     }
+    public void SetDisMag(float _mag) {
+        displacement_magnitude = _mag;
+        Shader.SetGlobalFloat(_magnitude_name, displacement_magnitude);
+    }
+
+    public void SetOverLapImage(Texture newImg) {
+        overLapImg = newImg;
+        //Shader.SetGlobalTexture(_OverLapImage, overLapImg);
+        effectMaterial.SetTexture(_OverLapImage, overLapImg);
+    }
 
 
     void EndCameraRendering(ScriptableRenderContext context, Camera camera)
@@ -71,8 +82,8 @@ public class BlackScreenEffect : MonoBehaviour
     private void OnValidate()
     {
         //only in editor
-        /*
         Shader.SetGlobalFloat(_magnitude_name, displacement_magnitude);
+        /*
         Shader.SetGlobalFloat(_Maskmagnitude_name, mask_magnitude);*/
         Shader.SetGlobalFloat(_RangeSize, maskRangeSize);
     }

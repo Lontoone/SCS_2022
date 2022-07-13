@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelManagerInit : MonoBehaviour
 {
+    public static LevelManagerInit instance;
+
     public GameObject[] dontDestoryObjs;
     public LevelMapSO levelData;
 
@@ -15,11 +17,20 @@ public class LevelManagerInit : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         LevelFlowManager.flowData = levelData;
         LevelFlowManager.LoadFromStart("StartPoint");
+
+        if (instance == null) {
+            instance = this;
+        }
     }
 
 
-    public void ClearAll() { 
+    public void ClearAll() {
         //TODO: ....
+        for (int i =0; i<dontDestoryObjs.Length; i++) {
+            Destroy(dontDestoryObjs[i]);
+        }
+        instance = null;
+        Destroy(gameObject);
     }
 
 }
