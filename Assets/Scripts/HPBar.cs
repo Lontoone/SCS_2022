@@ -12,11 +12,11 @@ public class HPBar : MonoBehaviour
     private void Start()
     {
         hitable = gameObject.GetComponent<HitableObject>();
-        hitable.gotHit_event += UpdatHPText;
+        hitable.gotHeal_event += UpdatHPText;
     }
     private void OnDestroy()
     {
-        hitable.gotHit_event -= UpdatHPText;
+        hitable.gotHeal_event -= UpdatHPText;
     }
 
     private void UpdatHPText() {

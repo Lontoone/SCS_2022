@@ -177,7 +177,6 @@ public class BasicAI : MonoBehaviour
     void AddDefaultAction()
     {
         int ran = UnityEngine.Random.Range(0, 100);
-        Debug.Log("Add func" + ran);
         //IDLE
         if ((ran < 50 || walk_act.is_in_gap_time_lock) && attackingObj == null)
         {

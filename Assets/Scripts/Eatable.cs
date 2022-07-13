@@ -19,6 +19,6 @@ public class Eatable : MonoBehaviour
     }
 
     private void HealPlayer() {
-        HitableObject.Hit_event_c(FindObjectOfType<PlayerControl>().gameObject , -heal);
+        HitableObject.Heal_event_c(FindObjectOfType<PlayerControl>().gameObject , heal);
     }
 }
