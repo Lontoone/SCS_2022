@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OverLapImage:
-        m_Texture: {fileID: 2800000, guid: 7f069323b45eca745ab8bb6dfd9a0361, type: 3}
+        m_Texture: {fileID: 2800000, guid: 696cf8fe68d7f0548a0a93d5a93e41c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

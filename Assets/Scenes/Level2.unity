@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &152650053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -590,6 +590,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 22586649}
     m_Modifications:
     - target: {fileID: 1266118780795318994, guid: 74c9c621876619949b033038cce8f554, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108024944678511849, guid: 74c9c621876619949b033038cce8f554, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

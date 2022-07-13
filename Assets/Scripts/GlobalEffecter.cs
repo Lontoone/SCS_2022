@@ -37,7 +37,7 @@ public class GlobalEffecter : MonoBehaviour
         EffectObjectSO so = effect_dicts[key];
         obj.transform.position = _pos;
         obj.SetRecall(key, so.duration);
-
+        AudioController.Instance.SpawnAudio(0);
         ShakeCamera();
     }
 
