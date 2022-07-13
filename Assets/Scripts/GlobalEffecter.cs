@@ -11,13 +11,6 @@ public class GlobalEffecter : MonoBehaviour
 
     private void Start()
     {
-        for (int i=0; i <effects.Length; i++) {
-            effect_dicts.Add(effects[i].gcName , effects[i]);
-
-            GameObject _obj = GameObject.Instantiate(effects[i].prefab);
-            GCManager.RegisterObject(effects[i].gcName ,_obj);
-            DontDestroyOnLoad(_obj);
-        }
 
         HitableObject.HitEffect_event += DamageEffect;
         HitableObject.HitEffect_event += PopUpText;
@@ -30,6 +23,24 @@ public class GlobalEffecter : MonoBehaviour
         HitableObject.HitEffect_event -= PopUpText;
     }
 
+    private void Init() {
+
+        effect_dicts.Clear();
+        for (int i=0; i <effects.Length; i++) {
+            effect_dicts.Add(effects[i].gcName , effects[i]);
+
+            GameObject _obj = GameObject.Instantiate(effects[i].prefab);
+            GCManager.RegisterObject(effects[i].gcName ,_obj);
+
+        }
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        GCManager.Clear();
+        Init();
+
+    }
 
     public void DamageEffect(Vector3 _pos , float _damge) {
         string key = "Attack";
