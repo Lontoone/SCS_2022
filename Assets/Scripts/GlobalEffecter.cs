@@ -8,6 +8,7 @@ public class GlobalEffecter : MonoBehaviour
     public EffectObjectSO[] effects;
     private Dictionary<string, EffectObjectSO> effect_dicts = new Dictionary<string, EffectObjectSO>();
 
+    private bool _shakeLock = false;
 
     private void Start()
     {
@@ -64,7 +65,16 @@ public class GlobalEffecter : MonoBehaviour
     }
 
     public void ShakeCamera() {
-        Camera.main.DOShakePosition(0.05f);
+        if (!_shakeLock)
+        {
+            Camera.main.DOShakePosition(0.5f,strength:1);
+            _shakeLock = true;
+            Invoke("UnLockShake",1f);
+        }
+    }
+
+    void UnLockShake() {
+        _shakeLock = false;
     }
 
 

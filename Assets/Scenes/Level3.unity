@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Generation Zone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789184, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -555,6 +559,14 @@ PrefabInstance:
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
@@ -1394,6 +1406,14 @@ PrefabInstance:
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
@@ -2284,6 +2304,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
 --- !u!1001 &1041957078
@@ -2903,6 +2931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Generation Zone (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789184, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2946,6 +2978,14 @@ PrefabInstance:
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
@@ -5248,6 +5288,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
 --- !u!1001 &2016230280
@@ -5375,6 +5423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Generation Zone (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789184, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5418,6 +5470,14 @@ PrefabInstance:
     - target: {fileID: 8882087254270789190, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882087254270789191, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
+      propertyPath: minCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727fc2bcd6c50448aa74a0a656ea84, type: 3}
