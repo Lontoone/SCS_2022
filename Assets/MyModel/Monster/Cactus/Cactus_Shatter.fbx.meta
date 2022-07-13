@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 2c5310b15a8bd9947862d412de9ed915
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: 5372513508589988497
+    second: Cactus_monster.003|Action
+  - first:
+      74: 823667544996032498
+    second: Cactus_monster.003|Run.002
+  - first:
+      74: -6471807085606223036
+    second: Cactus_monster.004|Action
+  - first:
+      74: 4881997003134689334
+    second: Cactus_monster.004|Run.002
+  - first:
+      74: -7544381431258739773
+    second: Cactus_monster.005|Action
+  - first:
+      74: 5690836937342673241
+    second: Cactus_monster.005|Run.002
+  - first:
+      74: 5759315653356587592
+    second: Cactus_monster.006|Action
+  - first:
+      74: -3045810826131720517
+    second: Cactus_monster.006|Run.002
+  - first:
+      74: -1612896195356019784
+    second: Cactus_monster.008|Action
+  - first:
+      74: 5049289545284721201
+    second: Cactus_monster.008|Run.002
+  - first:
+      74: 4430659900921963119
+    second: Cactus_monster.009|Action
+  - first:
+      74: -3503487899654797855
+    second: Cactus_monster.009|Run.002
+  - first:
+      74: -3715699254339369024
+    second: Cactus_monster.010|Action
+  - first:
+      74: -1691577729176506114
+    second: Cactus_monster.010|Run.002
+  - first:
+      74: -4322291401083348937
+    second: Cactus_monster.002|Action
+  - first:
+      74: -6798723487315707650
+    second: Cactus_monster.002|Run.002
+  - first:
+      74: 5738097309043999077
+    second: Cactus_monster.007|Action
+  - first:
+      74: -2743269123554906760
+    second: Cactus_monster.007|Run.002
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrassGround.004
+    second: {fileID: 2100000, guid: 70e8a67f5d80d3d40a5a2bb832006f47, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
