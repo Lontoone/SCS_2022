@@ -66,6 +66,7 @@ Shader "Unlit/Ramp"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                float4 color = tex2D(_MainTex, i.uv);
                 fixed3 worldNormal=normalize(i.worldNormal);                
                 fixed3 worldLightDir=normalize(UnityWorldSpaceLightDir(i.worldPos));      
                 fixed3 ambient=UNITY_LIGHTMODEL_AMBIENT.xyz;
@@ -79,7 +80,7 @@ Shader "Unlit/Ramp"
                 fixed3 halfDir=normalize(worldLightDir+viewDir);
                 fixed3 specular = _LightColor0.rgb * _Specular.rgb*pow(max(0,dot(worldNormal,halfDir)),_Gloss);
 
-                float4 result =float4(ambient+diffuse+specular,1);    
+                float4 result =float4(color + ambient+diffuse+specular,1);    
                 UNITY_APPLY_FOG(i.fogCoord, result);
                 return  result;
             }

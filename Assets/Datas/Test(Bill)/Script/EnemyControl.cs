@@ -7,7 +7,7 @@ public class EnemyControl : MonoBehaviour
     private HitableObject hitable;
     public Bounds attackRange;
     [Header("移動速度")]
-    int MoveSpeed = 20;
+    public int MoveSpeed = 20;
 
     [Header("攻擊範圍")]
     int MaxDist = 3;

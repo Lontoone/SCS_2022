@@ -112,6 +112,7 @@ MonoBehaviour:
   attackRange:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  MoveSpeed: 5
   PlayerObj: []
   Medic: {fileID: 4856047908221115354, guid: 6b44ae73d96eb444dae7da46cc5f972d, type: 3}
   Blood: 100
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddecea7dbbde3441f9702717991e8068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
+  HP: 350
   isDead: 0
   isHitable: 1
   hitInterval: 0.5
