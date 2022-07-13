@@ -7,7 +7,7 @@ public class EnemyControl : MonoBehaviour
     private HitableObject hitable;
     public Bounds attackRange;
     [Header("移動速度")]
-    public int MoveSpeed = 20;
+    public int MoveSpeed = 3;
 
     [Header("攻擊範圍")]
     int MaxDist = 3;
@@ -81,7 +81,7 @@ public class EnemyControl : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        HitableObject.Hit_event_c(other.gameObject , 10);
+        HitableObject.Hit_event_c(other.gameObject , 20);
         /*
         if (other.GetComponent<Collider>().tag == "Player")
         {
@@ -106,5 +106,10 @@ public class EnemyControl : MonoBehaviour
         Destroy(gameObject,2f);
         m_Animator.SetBool("isDead", true);
         Debug.Log("EnemyDie");
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(attackBound.center + transform.position, attackBound.size);
     }
 }

@@ -518,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 1}
   MoveSpeed: 5
   m_Animator: {fileID: 1863855607}
   PlayerObj: []
@@ -526,10 +526,10 @@ MonoBehaviour:
   Blood: 100
   attackLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attackBound:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -0.57, y: 1.02, z: 0.03}
+    m_Extent: {x: 1, y: 1, z: 1}
 --- !u!114 &1075048243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddecea7dbbde3441f9702717991e8068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 150
+  HP: 100
   isDead: 0
   isHitable: 1
   hitInterval: 0.5

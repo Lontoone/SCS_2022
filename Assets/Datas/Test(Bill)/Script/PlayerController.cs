@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
 
     public float Health;
 
-    public GameObject DeathUI;
-
     public GameObject RestartUI;
     [Header("攝影機跟隨")]
     public float camRayLenght = 100f;
@@ -197,8 +195,15 @@ public class PlayerController : MonoBehaviour
     
     void Die()
     {
-        Invoke("Loading", 2f);
+        //Invoke("Loading", 2f);
         RestartUI.SetActive(true);
+        Am.SetBool("isDead", true);
+        Invoke("TimeStop", 2f);
+    }
+
+    void TimeStop()
+    {
+        Time.timeScale = 0;
     }
 
     void Loading()
@@ -221,4 +226,5 @@ public class PlayerController : MonoBehaviour
             RB.MoveRotation(newRotation);
         }
     }
+
 }
