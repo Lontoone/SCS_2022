@@ -115,11 +115,10 @@ public class BasicAI : MonoBehaviour
             return;
         actionController.AddAction(attack);
         //animator.Play("Attack");
-        /*
         foreach (GameObject _hits in attack_collider.collidersInRange)
         {
-            HitableObj.Hit_event_c(_hits, damage, gameObject);
-        }*/
+            HitableObject.Hit_event_c(_hits, damage);
+        }
     }
     public virtual void Attack_anima_event(float damage_multiplier) //由Animator event呼叫
     {

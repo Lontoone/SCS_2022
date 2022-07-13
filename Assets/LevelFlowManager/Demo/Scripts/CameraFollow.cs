@@ -40,6 +40,9 @@ public class CameraFollow : MonoBehaviour
 
     private void CloseAllSubCamera(Scene _scene, LoadSceneMode loadSceneMode)
     {
+        if ( camera ==null) {
+            return;
+        }
         foreach (Camera _camera in FindObjectsOfType<Camera>())
         {
             if (_camera != camera && _camera.transform.parent != camera.transform)
