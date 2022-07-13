@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public LayerMask attackLayer;
-    public Bounds attackBound;
     private HitableObject hitable;
     public static event Action<Vector3,int> OnHurt;
     [Header("移動")]
@@ -39,6 +37,8 @@ public class PlayerController : MonoBehaviour
     [Header("攝影機跟隨")]
     public float camRayLenght = 100f;
     private int floorMask;
+
+    public GameObject attckObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,12 +97,14 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0)) {
-            Collider[] _attacked = Physics.OverlapBox(attackBound.center+transform.position, attackBound.extents,Quaternion.identity,attackLayer);
-            for (int i =0; i< _attacked.Length; i++) {
-                HitableObject.Hit_event_c(_attacked[i].gameObject , 30);
-            }
+            attckObj.SetActive(true);
         }
 
+        
+        if (Input.GetMouseButtonUp(0))
+        {
+            attckObj.SetActive(false);
+        }
         Turning();
     }
 
@@ -174,12 +176,6 @@ public class PlayerController : MonoBehaviour
     {
         Health = Health + 15;
         //Debug.Log("Health");
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(attackBound.center +transform.position , attackBound.size);
     }
     
     void Die()
