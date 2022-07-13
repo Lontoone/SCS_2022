@@ -9,13 +9,8 @@ public class ShowGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerControl>().GetComponent<HitableObject>();
         player.Die_event += ShowMenu;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void ShowMenu()

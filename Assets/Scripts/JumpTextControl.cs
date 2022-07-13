@@ -7,10 +7,18 @@ using DG.Tweening;
 public class JumpTextControl : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    private Camera mainCamera;
+
+    private void Start(){
+mainCamera = Camera.main;
+    }
 
     private void FixedUpdate()
     {
-        transform.LookAt(Camera.main.transform.position, Vector3.right);
+        if(mainCamera!=null)
+            transform.LookAt(mainCamera.transform.position, Vector3.right);
+        else            
+            mainCamera = Camera.main;
     }
     public void SetText(Vector3 pos ,string _text) {
         text.text = _text;
