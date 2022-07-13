@@ -14,8 +14,8 @@ public class EnemyControl : MonoBehaviour
 
     int MinDist = 1;
 
-    //[Header("動畫")]
-    //public Animator m_Animator;
+    [Header("動畫")]
+    public Animator m_Animator;
 
     public GameObject[] PlayerObj;
 
@@ -24,6 +24,9 @@ public class EnemyControl : MonoBehaviour
     float X;
 
     public int Blood = 100;
+
+    public LayerMask attackLayer;
+    public Bounds attackBound;
     //public AudioSource As;
     void Start()
     {
@@ -32,7 +35,7 @@ public class EnemyControl : MonoBehaviour
         hitable = gameObject.GetComponent<HitableObject>();
         hitable.gotHit_event += GetHurt;
         hitable.Die_event += Die;
-        // m_Animator = GetComponent<Animator>();   
+        m_Animator = GetComponent<Animator>();   
     }
     private void OnDestroy()
     {
@@ -48,8 +51,12 @@ public class EnemyControl : MonoBehaviour
         transform.LookAt(PlayerObj[0].transform);
 
         SearchandAttack();
+        Collider[] _attacked = Physics.OverlapBox(attackBound.center + transform.position, attackBound.extents, Quaternion.identity, attackLayer);
+        for (int i = 0; i < _attacked.Length; i++)
+        {
+            HitableObject.Hit_event_c(_attacked[i].gameObject, 30);
+        }
 
-        //if(PlayerObj[0].GetComponent<PlayerController>().Health )
     }
 
     void SearchandAttack()
@@ -63,14 +70,11 @@ public class EnemyControl : MonoBehaviour
 
             if (Vector3.Distance(transform.position, PlayerObj[0].transform.position) <= MaxDist)
             {
-                //Here Call any function U want Like Shoot at here or something
                 MoveSpeed = 0;
-                // m_Animator.SetBool("isAttack", true);
             }
             else
             {
                 MoveSpeed = 10;
-                // m_Animator.SetBool("isAttack", false);
             }
         }
     }
@@ -99,6 +103,8 @@ public class EnemyControl : MonoBehaviour
 
     void Die() {
         //desyoty...
-        Destroy(gameObject);
+        Destroy(gameObject,2f);
+        m_Animator.SetBool("isDead", true);
+        Debug.Log("EnemyDie");
     }
 }
