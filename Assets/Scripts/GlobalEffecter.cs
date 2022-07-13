@@ -64,7 +64,7 @@ public class GlobalEffecter : MonoBehaviour
     }
 
     public void ShakeCamera() {
-        Camera.main.DOShakePosition(0.15f);
+        Camera.main.DOShakePosition(0.05f);
     }
 
 
